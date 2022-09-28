@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.lbw.story.admin.dao.ShopMealDao">
+    <select id="findShopList" resultType="org.lbw.story.admin.model.Shop">
+        select
+            shop_id,
+            shop_name
+        from
+            t_shop
+        <where><!--where标签可以根据是否有查询条件，动态生成where关键字 -->
+            <if test="shopId != null">
+                shop_id = #{shopId}
+            </if>
+        </where>
+    </select>
+
+    <select id="findShopMealListByShopIDs" resultType="org.lbw.story.admin.model.ShopMeal">
+        select
+            shop_id,
+            meal_id,
+            sm_store,
+            sm_recommend
+        from
+            t_shop_meal
+        <where>
+            <foreach collection="shop_ids" item="id" separator="or" open="" close="">
+                shop_id = #{id}
+            </foreach>
+        </where>
+
+    </select>
+
+
+    <select id="findShopMealList" resultType="org.lbw.story.admin.model.Meal">
+    SELECT
+        m.meal_id,
+        m.meal_name,
+        IFNULL(sm_id,0) has
+    FROM
+        t_meal m LEFT JOIN t_shop_meal sm ON m.meal_id = sm.meal_id AND sm.shop_id = #{shop_id}
+</select>
+
+    <select id="findShopMealWithCheckedList" resultType="org.lbw.story.admin.model.ShopMeal">
+        SELECT
+            t.shop_id,t.meal_id,t.shop_name,t.meal_name,
+            IFNULL(sm.sm_store,0) sm_store,
+            IFNULL(sm.sm_recommend,0) sm_recommend,
+            (CASE WHEN sm.sm_id IS NULL THEN 0 ELSE 1 END) checked
+        FROM
+            (
+                SELECT
+                    s.shop_id,
+                    s.shop_name,
+                    m.meal_id,
+                    m.meal_name
+                FROM t_shop s JOIN t_meal m
+                <where>
+                    <if test="shopId != null">
+                        s.shop_id = #{shopId}
+                    </if>
+                </where>
+            ) t LEFT JOIN t_shop_meal sm ON t.shop_id = sm.shop_id AND t.meal_id = sm.meal_id
+             ORDER BY t.shop_id
+    </select>
+</mapper>
