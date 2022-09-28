@@ -1,0 +1,308 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationStyle": "custom"
+				// "navigationBarTitleText": "长安故事"
+			}
+		},
+		{
+			"path": "pages/meal/meal",
+			"style": {
+				"navigationBarTitleText": "餐品管理",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/meal/meal-add",
+			"style": {
+				"navigationBarTitleText": "餐品新增",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/old/meal-bak",
+			"style": {
+				"navigationBarTitleText": "餐品管理",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/meal/meal-edit",
+			"style": {
+				"navigationBarTitleText": "餐品编辑",
+				"enablePullDownRefresh": false,
+				"h5": {
+					"titleNView": {
+						"buttons": [{
+							"text": "删除",
+							"fontSize": "26rpx",
+							"color": "red"
+						}]
+					}
+				}
+			}
+
+		}, {
+			"path": "pages/cart/cart",
+			"style": {
+				"navigationBarTitleText": "购物车",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/order/order",
+			"style": {
+				"navigationBarTitleText": "订单",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/mine/mine",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"enablePullDownRefresh": false,
+				"h5": {
+					"titleNView": {
+						"buttons": [{
+							"text": "后台管理",
+							"fontSize": "26rpx",
+							"color": "#888888"
+
+						}]
+					}
+				}
+			}
+
+		}, {
+			"path": "pages/adminhome/adminhome",
+			"style": {
+				"navigationBarTitleText": "后台管理",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/adminlogin/adminlogin",
+			"style": {
+				"navigationStyle": "custom"
+				// "enablePullDownRefresh": false
+			}
+
+		}
+		
+	    ,{
+            "path" : "pages/shop/shop",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        },
+		{
+		    "path" : "pages/shop/shop-add",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
+		    "path" : "pages/shop/shop-edit",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		}
+		
+		
+        ,{
+            "path" : "pages/shopmeal/shopmeal",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        },
+		{
+		    "path" : "pages/shopmeal/shopmeal-bak",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
+		    "path" : "pages/login/login",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
+		    "path" : "pages/register/register",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		}
+		
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#3cc51f",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"iconPath": "static/home.svg",
+			"selectedIconPath": "static/home_select.svg",
+			"text": "首页"
+		}, {
+			"pagePath": "pages/cart/cart",
+			"iconPath": "static/cart.svg",
+			"selectedIconPath": "static/cart_select.svg",
+			"text": "购物车"
+		}, {
+			"pagePath": "pages/order/order",
+			"iconPath": "static/order.svg",
+			"selectedIconPath": "static/order_select.svg",
+			"text": "订单"
+		}, {
+			"pagePath": "pages/mine/mine",
+			"iconPath": "static/mine.svg",
+			"selectedIconPath": "static/mine_select.svg",
+			"text": "我的"
+		}]
+	}
+	
+	
+	
+	
+	
+	
+	
+	// "tabBar": {
+	// 	"color": "#7A7E83",
+	// 	"selectedColor": "#3cc51f",
+	// 	"borderStyle": "white",
+	// 	"backgroundColor": "#f4f5f7",
+	// 	"custom": true,
+	// 	"list": [{
+	// 			"pagePath": "pages/test1/test1",
+	// 			// "iconPath": "home",
+	// 			// "selectedIconPath": "home-fill",
+	// 			"text": "首页",
+	// 			"count": 2,
+	// 			"isDot": true,
+	// 			"customIcon": false
+	// 		},
+	// 		{
+	// 			"pagePath": "pages/test1/test1",
+	// 			// "iconPath": "photo",
+	// 			// "selectedIconPath": "photo-fill",
+	// 			"text": "放映厅",
+	// 			"customIcon": false
+	// 		},
+	// 		{
+	// 			"pagePath": "pages/release/release",
+
+	// 			// "iconPath": "https://cdn.uviewui.com/uview/common/min_button.png",
+	// 			// "selectedIconPath": "https://cdn.uviewui.com/uview/common/min_button_select.png",
+	// 			"text": "发布",
+	// 			"midButton": true,
+	// 			"customIcon": false
+	// 		},
+	// 		{
+	// 			"pagePath": "pages/live/live",
+	// 			// "iconPath": "play-right",
+	// 			// "selectedIconPath": "play-right-fill",
+	// 			"text": "直播",
+	// 			"customIcon": false
+	// 		},
+	// 		{
+	// 			"pagePath": "pages/user/user",
+	// 			// "iconPath": "account",
+	// 			// "selectedIconPath": "account-fill",
+	// 			"text": "我的",
+	// 			"count": 23,
+	// 			"isDot": false,
+	// 			"customIcon": false
+	// 		}
+	// 	],
+	// 	"current": 0
+	// },
+	// "tabBar2": {
+	// 		"color": "#7A7E83",
+	// 		"selectedColor": "#3cc51f",
+	// 		"borderStyle": "white",
+	// 		"backgroundColor": "#f4f5f7",
+	// 		"custom": true,
+	// 		"list2": [{
+	// 			"pagePath": "pages/test1/test2",
+	// 				// "iconPath": "home",
+	// 				// "selectedIconPath": "home-fill",
+	// 				"text": "首页",
+	// 				"count": 2,
+	// 				"isDot": true,
+	// 				"customIcon": false
+	// 			},
+	// 			{
+	// 				"pagePath": "pages/Projection/Projection",
+	// 				// "iconPath": "photo",
+	// 				// "selectedIconPath": "photo-fill",
+	// 				"text": "放映厅",
+	// 				"customIcon": false
+	// 			},
+	// 			{
+	// 				"pagePath": "pages/release/release",
+
+	// 				// "iconPath": "https://cdn.uviewui.com/uview/common/min_button.png",
+	// 				// "selectedIconPath": "https://cdn.uviewui.com/uview/common/min_button_select.png",
+	// 				"text": "发布",
+	// 				"midButton": true,
+	// 				"customIcon": false
+	// 			},
+	// 			{
+	// 				"pagePath": "pages/live/live",
+	// 				// "iconPath": "play-right",
+	// 				// "selectedIconPath": "play-right-fill",
+	// 				"text": "直播",
+	// 				"customIcon": false
+	// 			},
+	// 			{
+	// 				"pagePath": "pages/user/user",
+	// 				// "iconPath": "account",
+	// 				// "selectedIconPath": "account-fill",
+	// 				"text": "我的",
+	// 				"count": 23,
+	// 				"isDot": false,
+	// 				"customIcon": false
+	// 			}
+	// 		],
+	// 		"current": 0
+	// 	}
+
+
+	
+}
