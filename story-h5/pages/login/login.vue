@@ -4,7 +4,7 @@
 			<view><u-button :plain="true" size="mini" style="width:200rpx;" :ripple="true" @click="$u.route('/pages/register/register')" type="error">新用户注册</u-button></view>
 		</view>
 		<view style="width:300rpx;margin-top:15%;margin-bottom:50rpx;">
-			<u-image width="100%" height="300rpx" src="/static/index/6.jpg"></u-image>
+			<u-image width="100%" height="300rpx" src="/static/uni-center/logo.png"></u-image>
 		</view>
 		
 		<!-- <view style="color:#999999;font-size:60rpx;font-weight: bold;letter-spacing: 8rpx;margin-top:40rpx;margin-bottom:50rpx;">

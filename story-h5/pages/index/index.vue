@@ -181,6 +181,7 @@
 					await this.$u.post('/user/cart',{shop_id,meal_id});
 					this.$u.toast('加购成功');
 				}else{
+					this.$u.toast("您未登录，请登录后加购")
 					this.$u.route('/pages/login/login');
 				}
 			}

@@ -68,11 +68,11 @@
 				
 				//将对象转为json字符串
 				const jsonStr = JSON.stringify(meal);
-				console.log(jsonStr);
+				console.log("json字符串",jsonStr);
 				
 				//对字符串进行字符串编码
 				const str = encodeURIComponent(jsonStr);
-				console.log(str);
+				console.log("字符串编码",str);
 				
 				this.$u.route({
 					url:'pages/meal/meal-edit',

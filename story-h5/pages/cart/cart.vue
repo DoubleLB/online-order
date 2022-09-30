@@ -28,10 +28,12 @@
 					<text style="font-size:35rpx;font-weight: bold;color:#fa3534;">￥{{cart.meal_price}}</text>
 				</view>
 				<view style="height:100%;padding:10rpx 0rpx;display: flex;align-items: flex-end;">
-					<u-number-box 
+					<text style="color: #fa3534;font-size: 10rpx;margin-right: 30rpx;" @click="removeCart(cart.cart_id)">删除</text>
+					<u-number-box  
 						bg-color="#f4f4f5" color="#303133" :input-width="60" :input-height="40"
 						v-model="cart.cart_num"
 						:index="cart.cart_id"
+						:min=1
 						@minus="onCartNumChange"
 						@plus="onCartNumChange"
 						@blur="onCartNumChange"
@@ -188,6 +190,18 @@
 				     url: '/pages/order/order'
 				   })
 				// this.$u.route('pages/order/order');
+			},
+			
+			//删除购物车商品
+			removeCart(rmc){
+				this.$u.post('/user/cart/remove',{cart_id:rmc});
+				this.$u.toast('删除成功');
+				
+				uni.reLaunch({
+					url: '/pages/cart/cart'
+				});
+
+
 			}
 
 			

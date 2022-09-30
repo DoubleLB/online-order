@@ -45,7 +45,7 @@
 				
 				header:{
 					'Token':uni.getStorageSync('Token'),
-					},
+					},//给请求头添加Token
 				
 				//分类选择器的列表数据
 				clsList: [{

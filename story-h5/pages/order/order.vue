@@ -3,9 +3,9 @@
 		<view style="margin:20rpx 0rpx 50rpx;padding-bottom:10rpx;border-bottom:1px solid #f5f5f5;" v-for="order in orderList" :key="order.order_submit">
 			<view style="margin-bottom:26rpx;font-size:30rpx;font-weight: bold;color:#303133;display:flex;justify-content: space-between;align-items: center;">
 				<text>{{order.shop_name}}</text>
-				<text style="font-size:20rpx;color:#fa3534;" v-if="order.order_status == 1">已提交</text>
+				<text style="font-size:20rpx;color:#3c78d8;" v-if="order.order_status == 1">已提交</text>
 				<text style="font-size:20rpx;color:#fa3534;" v-if="order.order_status == 2">已取消</text>
-				<text style="font-size:20rpx;color:#fa3534;" v-if="order.order_status == 3">已完成</text>
+				<text style="font-size:20rpx;color:#44e244;" v-if="order.order_status == 3">已完成</text>
 			</view>
 			<view>
 				<view v-for="meal in order.mealAndNumList" style="margin:20rpx 0rpx;height:120rpx;display: flex;flex-direction: row;align-items: center;">
