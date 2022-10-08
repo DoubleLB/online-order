@@ -22,7 +22,7 @@
 			
 			async updatePassword() {
 				try {
-					await this.$u.post('/admin/manager', this.form.a_pwd);
+					await this.$u.post('/admin/admin/pwd', this.form.a_pwd);
 					this.$u.toast('修改成功');
 					this.$u.route('/pages/adminlogin/adminlogin');
 				} catch (err) {

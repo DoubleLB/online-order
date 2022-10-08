@@ -1,6 +1,7 @@
 package org.lbw.story.user.dao;
 
 import org.apache.ibatis.annotations.*;
+import org.lbw.story.user.dto.OrderDto;
 import org.lbw.story.user.model.Order;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public interface OrderDao {
 
     @Update("update t_order " +
             "set order_submit = now(), " +
-            "    order_status = 3, " +
+            "    order_status = 1, " +
             "    order_amount = (select sum(od.od_num*m.meal_price) " +
             "                    from t_order_details od join t_meal m on od.meal_id = m.meal_id " +
             "                    where od.order_id = #{order_id})  " +
@@ -26,4 +27,13 @@ public interface OrderDao {
     void updateOrderAmount_submit(Integer order_id);
 
     List<Order> findOrderDetails(@Param("u_id") String userId);
+
+
+    void updateShopMeal(@Param("shop_id")Integer shop_id,@Param("cart_ids") Integer[] cart_ids);
+
+    @Update("UPDATE t_order SET order_status = 2 WHERE order_id = #{order_id}")
+    void deleteOrder(OrderDto orderDto);
+
+    @Update("UPDATE t_order SET order_status = order_status - 5 WHERE order_id = #{order_id}")
+    void deleteHistoryOrder(OrderDto orderDto);
 }

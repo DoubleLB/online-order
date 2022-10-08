@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.lbw.story.admin.dao.AdminOrderDao">
+    <select id="findShopOrder" resultType="org.lbw.story.admin.model.AdminOrder">
+        SELECT
+            o.order_id,
+            u.u_nickname,
+            o.order_submit,
+            o.order_amount,
+            o.order_status,
+            od.od_num,
+            m.meal_name,
+            m.meal_price,
+            m.meal_pic
+        FROM t_order o  JOIN t_shop s ON o.shop_id = s.shop_id
+                        JOIN t_order_details od ON o.order_id = od.order_id
+                        JOIN t_meal m ON od.meal_id = m.meal_id
+                        JOIN t_user u ON u.u_id = o.u_id
+
+        WHERE 	s.shop_id = #{shop_id}
+        ORDER BY o.order_submit DESC
+    </select>
+</mapper>

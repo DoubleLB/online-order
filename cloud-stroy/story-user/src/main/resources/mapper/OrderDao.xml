@@ -20,6 +20,7 @@
 
     <select id="findOrderDetails" resultType="org.lbw.story.user.model.Order">
         SELECT
+            o.order_id,
             s.shop_name,
             o.order_submit,
             o.order_amount,
@@ -33,5 +34,25 @@
                         JOIN t_meal m ON od.meal_id = m.meal_id
 
         WHERE 	o.u_id = #{u_id}
+        ORDER BY o.order_submit DESC
     </select>
+
+    <update id="updateShopMeal">
+        UPDATE
+            t_shop_meal sm
+        SET
+            sm.sm_store = sm.sm_store - 1,
+            sm.sm_sale = sm.sm_sale + 1
+        WHERE
+            sm.shop_id = #{shop_id} AND
+            sm.meal_id in (
+                SELECT meal_id
+                FROM t_cart
+                WHERE  cart_id in
+                            <foreach collection="cart_ids" item="cart_id" separator="," open="(" close=")">
+                            #{cart_id}
+                            </foreach>
+            )
+
+    </update>
 </mapper>

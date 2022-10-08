@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.lbw.story.admin.dao.AdminDao">
+    <select id="findAdmin" resultType="org.lbw.story.admin.model.Admin">
+        select *
+        from t_admin a join t_shop s on a.shop_id = s.shop_id
+        <where>
+            <if test="shopId != null">
+                a.shop_id = #{shopId}
+            </if>
+        </where>
+        order by a_update
+    </select>
+</mapper>

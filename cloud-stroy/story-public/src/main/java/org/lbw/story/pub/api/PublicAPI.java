@@ -30,8 +30,9 @@ public class PublicAPI {
     @Autowired
     private PublicDao publicDao;
 
+    //获取餐品图片
     @GetMapping("/img/{imgname}")
-    public void img(@PathVariable String imgname, OutputStream out) throws IOException {//@说明参数来源于路径中
+    public void meal_img(@PathVariable String imgname, OutputStream out) throws IOException {//@说明参数来源于路径中
 
         String path = StoryConstants.UPLOAD_DIR + "/" + imgname;
         InputStream in = new FileInputStream(path);
@@ -45,6 +46,24 @@ public class PublicAPI {
         in.close();
     }
 
+    //获取用户头像
+    @GetMapping("/img-user/{imgname}")
+    public void user_img(@PathVariable String imgname,OutputStream out) throws IOException {
+
+        String path = StoryConstants.UPLOAD_USER_DIR + "/" + imgname;
+        InputStream in = new FileInputStream(path);
+        byte[] b = new byte[1024 * 500];
+        int len = -1;
+        while((len = in.read(b)) != -1){
+            out.write(b,0,len);
+        }
+        out.flush();
+        out.close();
+        in.close();
+
+    }
+
+    //old 上传图片
     @PostMapping("/upload")
     public Result upload(MultipartFile file) throws IOException {
 
@@ -132,6 +151,7 @@ public class PublicAPI {
         return Result.err(Result.CODE_ERR_BUSINESS,"登录失败");
     }
 
+    //是否为管理员
     @GetMapping("/is-admin")
     public Result<Map<String,Boolean>> isAdmin(@RequestHeader("Token") String token){
         Map<String,Boolean> map = new HashMap<>();

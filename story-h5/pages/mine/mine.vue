@@ -3,8 +3,9 @@
 		<view class="logo" @click="goLogin" :hover-class="!login ? 'logo-hover' : ''">
 			<image class="logo-img" :src="login ? (this.userInfo.u_avatar == null ? avatarUrl : imgPath()) :avatarUrl"></image>
 			<view class="logo-title">
-				<text class="uer-name">Hi，{{login ? this.userInfo.u_nickname : '您未登录'}}</text>
+				<text class="uer-name">Hi，{{login ? (this.userInfo.u_nickname == null ? '[用户]' : this.userInfo.u_nickname) : '您未登录'}}</text>
 				<text class="go-login navigat-arrow" v-if="!login">&#xe65e;</text>
+				<!-- <u-icon name="arrow-right" color=" #8c8c8c" size="38"></u-icon> -->
 			</view>
 		</view>
 		<view class="center-list">
@@ -13,7 +14,7 @@
 				<text class="list-text">帐号管理</text>
 				<text class="navigat-arrow">&#xe65e;</text>
 			</view>
-			<view class="center-list-item">
+			<view class="center-list-item" @click="toHistoryOrder">
 				<text class="list-icon">&#xe639;</text>
 				<text class="list-text">历史订单</text>
 				<text class="navigat-arrow">&#xe65e;</text>
@@ -78,6 +79,11 @@
 			//获取用户信息
 			async getUserInfoList(){
 				this.userInfo = await this.$u.get('/user/user');//这是一个耗时的ajax请求,await表是一直阻塞，直到获取响应数据
+			},
+			
+			//跳转历史订单
+			toHistoryOrder(){
+				this.$u.route('/pages/order/history-order');
 			},
 			
 			//判断是否登录

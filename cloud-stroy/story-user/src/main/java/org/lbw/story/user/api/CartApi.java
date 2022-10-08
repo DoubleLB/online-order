@@ -39,6 +39,8 @@ public class CartApi {
             cartDao.updateCartAddOne(cartDto);//将查到的购物车中的数据中数量增1
         }
 
+        cartDao.updateShopMeal_Click(cartDto);
+
         return  Result.OK();
     }
 
@@ -57,6 +59,14 @@ public class CartApi {
     @PutMapping("/num")
     public Result updateCartNum(@RequestBody CartDto cartDto){
         cartDao.updateCartNum(cartDto);
+
+        return Result.OK();
+    }
+
+    //删除购物车商品
+    @PostMapping("/remove")
+    public Result removeCart(@RequestBody CartDto cartDto){
+        cartDao.removeCartfood(cartDto);
 
         return Result.OK();
     }

@@ -15,7 +15,7 @@ public class User {
     private String u_id;
     private String u_pwd;
     private String u_nickname;
-    private Integer u_sex;
+    private String u_sex;
     private String u_avatar;
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")

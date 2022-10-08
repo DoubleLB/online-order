@@ -1,8 +1,8 @@
 <template>
 	<view class="meal">
 		
-		<u-sticky style="padding:20rpx 40rpx;">
-			<u-button type="error" shape="circle" :ripple="true" @click="toAdd" >新增</u-button>
+		<u-sticky offset-top="950" style="margin-left: auto; margin-right: 120rpx; width: 0rpx;height: 0rpx;">
+			<u-button style="width: 100rpx;height: 100rpx;" type="primary" shape="circle" :ripple="true" @click="toAdd"><u-icon name="plus" color="#ffffff" size="38"></u-icon></u-button>
 		</u-sticky>
 		
 		<view class="meal-list">

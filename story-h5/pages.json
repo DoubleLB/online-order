@@ -117,13 +117,20 @@
 		    "style" :                                                                                    
 		    {
 		        "navigationBarTitleText": "",
-		        "enablePullDownRefresh": false
+		        "enablePullDownRefresh": false,
+				"h5": {
+					"titleNView": {
+						"buttons": [{
+							"text": "删除",
+							"fontSize": "26rpx",
+							"color": "red"
+						}]
+					}
+				}
 		    }
 		    
-		}
-		
-		
-        ,{
+		},
+		{
             "path" : "pages/shopmeal/shopmeal",
             "style" :                                                                                    
             {
@@ -170,15 +177,6 @@
             
         }
         ,{
-            "path" : "pages/mine/mine2",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
             "path" : "pages/mine/mineinfo",
             "style" :                                                                                    
             {
@@ -193,6 +191,105 @@
             {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/adminhome/admin_order_shop",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/adminhome/admin_order",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/cls/cls",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/cls/cls-add",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/cls/cls-edit",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+				"h5": {
+					"titleNView": {
+						"buttons": [{
+							"text": "删除",
+							"fontSize": "26rpx",
+							"color": "red"
+						}]
+					}
+				}
+            }
+            
+        }
+        ,{
+            "path" : "pages/shop/shop_order",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/admin/admin",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/admin/admin-add",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/admin/admin-edit",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+				"h5": {
+					"titleNView": {
+						"buttons": [{
+							"text": "删除",
+							"fontSize": "26rpx",
+							"color": "red"
+						}]
+					}
+				}
             }
             
         }

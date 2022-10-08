@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.lbw.story.admin.dao.ShopDao">
+    <select id="findShopList" resultType="org.lbw.story.admin.model.Shop">
+        select *
+        from t_shop
+        <where>
+            <if test="shopId != null">
+                shop_id = #{shopId}
+            </if>
+        </where>
+    </select>
+</mapper>

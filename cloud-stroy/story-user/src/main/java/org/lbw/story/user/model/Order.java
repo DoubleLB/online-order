@@ -7,6 +7,8 @@ import java.util.Date;
 
 @Data
 public class Order {
+
+    private Integer order_id;
     private String shop_name;
     @JsonFormat(pattern = "yyyy-MM-dd  HH:mm:ss",timezone = "GMT+8")//设置时间格式和时区
     private Date order_submit;

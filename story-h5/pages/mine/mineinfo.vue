@@ -73,22 +73,22 @@
 				rules: {
 					u_nickname: [{
 						required: true,
-						message: '请输入姓名',
+						message: '请输入用户名',
 						// 可以单个或者同时写两个触发验证方式
 						trigger: 'blur,change'
 					}],
 					u_sex: [{
 						required: true,
-						message: '请选择分类',
+						message: '请选择性别',
 						// 可以单个或者同时写两个触发验证方式
-						trigger: ['blur,change'],
+						trigger: 'blur,change'
 					}],
 					u_pwd:[{
 						required: true,
 						max:10,
 						min:1,
 						message:'请输入密码（小于10位）',
-						trigger:['blur,change']
+						trigger:'blur,change'
 					}]
 				},
 
